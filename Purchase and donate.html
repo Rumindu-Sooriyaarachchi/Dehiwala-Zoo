@@ -5,7 +5,7 @@
     <title>Purchace and Donate </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="logo" href="images/logo.jpg">
     </head>
 	
@@ -16,10 +16,10 @@
 		<img src="images/logo.jpg"></a>
                 <div class="nav-links" id="nav-links">
                       <ul>
-                         <li><a href="index.html">Home</a></li>
-                        <li><a href="Animals and Plants.html">Animals and plants</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Animals_and_Plants.html">Animals and plants</a></li>
                         <li><a href="Activities.html">Activities</a></li>
-                        <li><a href="Purchase and donate.html">Purchase and Donate</a></li>
+                        <li><a href="Purchase_and_donate.html">Purchase and Donate</a></li>
                         <li><a href="Contact.html">Contact</a></li>
                     </ul>
                    
@@ -37,36 +37,132 @@
  	<div class="row">
                 <div class="box-in">
                     
-                    <h3>Children</h3>
-                    <p>RS.100/=</p>
-                    <p>Below 12</p>
+                    <h3>Student Pass</h3>
+                    <p></p>
+                    <p></p>
     
                 </div>
             
                  <div class="box-in">
                
-                    <h3>Adult</h3>
-                    <p>RS.200</p>
-                    <p>Above 12</p>
+                    <h3>Foreiner Pass</h3>
+                    <p></p>
+                    <p></p>
     
                 </div>
     
                 <div class="box-in">
 		    
-                    <h3>Foreigners</h3>
-                    <p>RS.1000</p>
-                    <p>For all age</p>
+                    <h3>Day Pass</h3>
+                    <p></p>
+                    <p></p>
     
                 </div>
                 
             </div>
+
+<section class="purchase">
+            <div class="contact-col">
+                <form action="" class="contact-col" id="frmPurchase">
+                        <select name="" id="cmbChoice" class="custom-select" onchange="calculateCost();">
+                            <option value="" selected disabled>Select Ticket Catagory</option>
+                            <option value="0">Day pass</option>
+                            <option value="1">Student pass</option>
+                            <option value="2">Foreigner Pass</option>
+                            
+                        </select>
+                        <input id="noOfAdult" type="number" placeholder="Number of Adults" onblur="calculateCost();">
+                            <input id="noOfChild" type="number" placeholder="Number of Children" onblur="calculateCost();">
+                        <input type="date" id="date" name="date" onblur="calculateCost();">
+                        <select name="" id="cmbDuratiom" class="custom-select" onchange="calculateCost();">
+                            <option value="" selected disabled>Select the duration</option>
+                            <option value="0">3 hours</option>
+                            <option value="1">half day</option>
+                            <option value="2">full day</option>
+                            <option value="3">2 days</option>
+                        </select>
+                            <label for="noOfPasses"></label>
+                            <input id="noOfPasses" type="number" placeholder="Number of Passes" onblur="calculateCost();" >
+                            <input id="noOfTokens" type="number" placeholder="Number of Tokens" onblur="calculateCost();">
+            
+                    <br />
+                    <p>Cost of the current order : LKR <span id="spCost">0.00</span></p> 
+                    <br />
+                    <input id="AddOrder" type="button" value="Add to Order" class="hero-btn red-btn">
+                    <div id="divOrder" style="display:none;">
+                    <table id="tbl_order">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Adults</th>
+                                    <th>Children</th>
+                                    <th>Date &nbsp;</th>
+                                    <th>Duaration</th>
+                                    <th>Food Tokens</th>
+                                    <th>Annual Passes</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody_order"></tbody>
+                            <tfoot>
+                                <tr id="table_divider">
+                                    <th colspan="7">Grand Total</th>
+                                    <th colspan="2" id="thGrandTot">0.00</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                       <input id="order"  type="submit" value="Place Order" class="hero-btn red-btn">
+                </form>
+            </div> 
+        </section>
+
 	</section>  
 	<section class="purchase">	
 	 <div class="contact-col">
             <form action="" class="contact-col">
                 <input type="text" placeholder="Enter your name" required>
                 <input type="email" placeholder="Enter your email" required>
-                
+                <input type="number" placeholder="Donation amount(LKR)" required>
+                <textarea  rows="3" placeholder="Enter your address" required></textarea>
+                <textarea  rows="5" placeholder="Donation Commment" required></textarea>
+                <span>Card number</span>
+                <input type="text" maxlength="16" class="card-number-input">
+                <span>Card holder</span>
+                <input type="text" class="card-holder-input">
+                <span>expiration mm</span>
+                <select name="" id="" class="month-input">
+                            <option value="month" selected disabled>Month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                </select>
+                <span>expiration yy</span>
+                <select name="" id="" class="year-input">
+                            <option value="year" selected disabled>Year</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                 </select>
+                 <span>cvc</span>
+                 <input type="text" maxlength="3" class="cvv-input">
+               
                 <button type="submit" class="hero-btn red-btn">Donate</button>
             </form>
         </div>   
@@ -83,5 +179,7 @@
     downloaded from Unsplash The internet’s source of freely-usable images, available: @https://unsplash.com ------------------------------ 
     -------------------------------------------------------------------------------------------------------------------------------------->
     </section> 
+
+    <script src="Javascript/calculateCost.js"> </script>
     </body>
     </html>
